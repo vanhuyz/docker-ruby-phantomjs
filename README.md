@@ -1,4 +1,4 @@
-# A Docker Image for running rspec/capybara on Ubuntu
+# A Docker Image for running rspec/capybara
 
 * Ruby 2.2.3
 * Node 0.10.29
