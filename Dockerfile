@@ -2,18 +2,16 @@ FROM ruby:2.2.3
 
 MAINTAINER vanhuyz
 
-RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-
-ENV PHANTOMJS phantomjs-1.9.8-linux-x86_64
-
 RUN \
   apt-get update && \
-  apt-get install -y build-essential chrpath libssl-dev libxft-dev && \
-  apt-get install -y libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev && \
-  apt-get install -y nodejs npm && \
-  npm install -g bower && \
-  ln -s /usr/bin/nodejs /usr/bin/node && \
-  wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 && \
-  tar xvjf $PHANTOMJS.tar.bz2 && \
-  mv $PHANTOMJS /usr/local/share && \
-  ln -sf /usr/local/share/$PHANTOMJS/bin/phantomjs /usr/local/bin
+  apt-get install -y build-essential g++ flex bison gperf perl \
+  libsqlite3-dev libfontconfig1-dev libicu-dev libfreetype6 libssl-dev \
+  libpng-dev libjpeg-dev python libx11-dev libxext-dev && \
+  wget https://github.com/ariya/phantomjs/archive/2.0.0.tar.gz && \
+  tar xzvf  2.0.0.tar.gz && \
+  cd phantomjs-2.0.0  && \
+  ./build.sh --confirm && \
+  mv /phantomjs-2.0.0/bin/phantomjs /usr/local/bin && \
+  cd / && \
+  rm 2.0.0.tar.gz && \
+  rm -r phantomjs-2.0.0

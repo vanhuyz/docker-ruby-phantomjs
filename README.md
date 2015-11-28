@@ -1,17 +1,14 @@
 # A Docker Image for running rspec/capybara
 
 * Ruby 2.2.3
-* Node 0.10.29
-* Npm 1.4.21
-* Bower 1.6.7
-* Phantomjs 1.9.8
+* Phantomjs 2.0.0
 
 # Dockerhub
 
-https://hub.docker.com/r/vanhuy/ruby-npm-bower-phantomjs/
+https://hub.docker.com/r/vanhuy/ruby-phantomjs/
 
 # Usage
 
 ```bash
-docker pull vanhuy/ruby-npm-bower-phantomjs
+docker pull vanhuy/ruby-phantomjs
 ```
