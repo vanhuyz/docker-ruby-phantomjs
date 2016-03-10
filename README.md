@@ -1,7 +1,7 @@
 # A Docker Image for running rspec/capybara
 
 * Ruby 2.3.0
-* Phantomjs 2.0.0
+* Phantomjs 2.1.1
 
 # Dockerhub
 
